@@ -11,10 +11,10 @@ export async function getAudiobooks(): Promise<audiobookTypes[]> {
 
     // Iterate through each document
     querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
-      const { id, name, delete: deleted } = doc.data();
+      const { id, name, image, delete: deleted } = doc.data();
 
       // Filter out documents with delete flag set to true
-      const data: audiobookTypes = { slug: doc.id, id, name };
+      const data: audiobookTypes = { slug: doc.id, id, name, image };
       if (!deleted) {
         audiobooks.push(data);
       }

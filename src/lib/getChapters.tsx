@@ -12,10 +12,10 @@ export async function getChapters(id: number): Promise<chapterTypes[]> {
 
     // Iterate through each document
     querySnapshot.forEach((doc: QueryDocumentSnapshot<DocumentData>) => {
-      const { id, title, script, delete: deleted } = doc.data();
+      const { id, title, audio, script, delete: deleted } = doc.data();
 
       // Filter out documents with delete flag set to true
-      const data: chapterTypes = { slug: doc.id, id, title, script };
+      const data: chapterTypes = { slug: doc.id, id, audio, title, script };
       if (!deleted) {
         chapters.push(data);
       }

@@ -28,7 +28,7 @@ export default function ChapterPage({ params }: { params: { slug: string } }) {
         <>
           <h1 className="font-medium font-5xl text-center underline decoration-green-300 my-10">{chapter?.title}</h1>
 <section>
-        <iframe width="100%" height="100" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${chapter?.audio}&color=%23b9ff66&auto_play=false&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=false`}></iframe>
+        <iframe width="100%" height="100" allow="autoplay" src={`https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/${chapter?.audio}&color=%23b9ff66&auto_play=true&hide_related=false&show_comments=false&show_user=false&show_reposts=false&show_teaser=false&visual=true`}></iframe>
       </section>
           <p className="opacity-80 py-5 mb-20">{chapter?.script}</p>
         </>
