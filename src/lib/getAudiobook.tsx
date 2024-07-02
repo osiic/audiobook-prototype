@@ -12,7 +12,7 @@ export async function getAudiobook(slug: string): Promise<false | audiobookTypes
     }
 
     // Menggunakan `as audiobookTypes` untuk memberitahu TypeScript tentang tipe data
-    console.log(docSnap.data())
+    // console.log(docSnap.data())
     return docSnap.data() as audiobookTypes;
   } catch (error) {
     console.error("Error fetching audiobook: ", error);

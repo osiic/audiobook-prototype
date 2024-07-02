@@ -25,7 +25,7 @@ export async function getChapters(id: number): Promise<chapterTypes[]> {
     chapters.sort((a, b) => a.id - b.id);
 
     // Log and return the array of audiobooks
-    console.log(chapters);
+    // console.log(chapters);
     return chapters;
   } catch (error) {
     console.error("Error fetching audiobooks: ", error);

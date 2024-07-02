@@ -6,9 +6,7 @@ import { useState, useEffect } from 'react';
 import { chapterTypes } from "@/interface/chapterTypes"
 import { getChapters } from "@/lib/getChapters"
 
-export function Chapters({ id }: { id: number }) {
-
-
+export function AudiobookChapters({ id, slug }: { id: number, slug: string }) {
   const [chapters, setChapters] = useState<chapterTypes[] | null>([]);
 
   useEffect(() => {
@@ -36,7 +34,7 @@ export function Chapters({ id }: { id: number }) {
       <h1 className="font-medium font-3xl underline decoration-green-300 mt-4 mb-2">Chapter <span className="text-green-90">12</span></h1>
       <ul>
         {(chapters != null && chapters.length != 0) ? chapters.map((chapter: chapterTypes, index: number) => (
-          <Link key={index} href={`/chapter/${chapter?.slug}`} >
+          <Link key={index} href={`/${slug}/${chapter?.slug}`} >
             <li className="border border-black rounded py-1 w-full mb-2 px-3 hover:bg-green-400/80 duration-200">
               {++index} - {chapter?.title}
             </li>
